@@ -38,11 +38,15 @@ export default function Header({}: Props) {
             <a className="font-normal font-[arial] text-red-400 " href="#skills">Skills</a>
             <a className="font-normal font-[arial] text-red-400 " href="#about">About</a>
         </motion.div>
-        <div className='md:hidden'>
+        <motion.div className='md:hidden'
+          initial={{x: 200}}
+          animate={{x: 0}}
+          transition={{duration: 0.9}}
+        >
           {toggleMenu ? <XMarkIcon className='w-8 h-8 text-white cursor-pointer' onClick={handleClick}/> : (
             <Bars3Icon className='w-8 h-8 text-white cursor-pointer' onClick={handleClick}/>
           )}
-        </div>
+        </motion.div>
         </div>
         <div className={toggleMenu ? 'flex flex-col space-y-2 text-center mt-3 transition-all duration-[2000ms] md:hidden' : "hidden"  }>
             <a className="font-normal  font-[arial]  text-red-400" href="#projects">Projects</a>
